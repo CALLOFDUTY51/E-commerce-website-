@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Navbar, Nav, Container, Badge } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import {  useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
    const navigate=useNavigate()
@@ -27,11 +27,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#products">Products</Nav.Link>
+            <Nav.Link as={Link} to="product">Home</Nav.Link>
+            <Nav.Link as={Link} to="#products">Products</Nav.Link>
           </Nav>
-          <Nav className="ms-auto" style={{ position: 'relative' }}>
-            <Nav.Link href="#cart" style={{ position: 'relative', padding: '0' }}>
+          <Nav className="ms-auto" style={{ position: 'relative',display:"flex", alignItems:"center" }}>
+          <Nav.Link as={Link} to="Searchproduct"><i style={{fontSize:"25px"}} class="fa-solid fa-magnifying-glass"></i></Nav.Link>
+            <Nav.Link as={Link} to="Cart" style={{ position: 'relative', padding: '0' }}>
               <FaShoppingCart onClick={goCart} size={25} />
               <p style={aa}>{cnt}</p>
               

@@ -4,9 +4,7 @@ import { Card, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { addCart1 } from './mySlice';
 import { Carousel } from 'react-bootstrap';
-import a1 from '../public/eduford_img/library.png'
-import a2 from '../public/eduford_img/washington.png'
-import a3 from '../public/eduford_img/newyork.png'
+
 import { useNavigate } from 'react-router-dom';
 
 
